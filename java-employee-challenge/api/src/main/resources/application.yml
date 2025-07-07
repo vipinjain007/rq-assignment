@@ -1,0 +1,11 @@
+spring.application.name: employee-api
+server.port: 8111
+mock:
+  api:
+   base-url: http://localhost:8112/api/v1
+logging:
+  file:
+    name: logs/app.log
+  level:
+    root: INFO
+    com.reliaquest.employee: DEBUG

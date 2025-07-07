@@ -1,0 +1,13 @@
+plugins {
+    id 'project-conventions'
+}
+
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+}
+
+springBoot {
+    mainClass = 'com.reliaquest.api.ApiApplication'
+}
