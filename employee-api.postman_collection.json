@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "0fa8be1f-701e-427e-903d-d44a3cb28b65",
+		"name": "EmployeeService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8111/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Vipin\",\r\n  \"salary\": 500000,\r\n  \"age\": 30,\r\n  \"title\": \"Software Engineer\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8111/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8111/api/employees/search/Zona McGlynn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees",
+						"search",
+						"Zona McGlynn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee  Highest salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8111/api/employees/highestSalary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees",
+						"highestSalary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get top 10  Highest salary employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8111/api/employees/topTenHighestEarningEmployeeNames",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees",
+						"topTenHighestEarningEmployeeNames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8111/api/employees/dcc86d77-16b1-4b43-bb51-b698e88bbe5c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees",
+						"dcc86d77-16b1-4b43-bb51-b698e88bbe5c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8111/api/employees/62b133e3-0f6b-40a1-8dee-378d44230cbd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8111",
+					"path": [
+						"api",
+						"employees",
+						"62b133e3-0f6b-40a1-8dee-378d44230cbd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
