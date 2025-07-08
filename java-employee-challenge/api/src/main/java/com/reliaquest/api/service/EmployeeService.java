@@ -27,12 +27,12 @@ public class EmployeeService {
 
     public List<Employee> fetchEmployeesFromMockApi() {
         String url = mockApiBaseUrl + "/employee";
-        log.debug("Calling mock API: {}", url);
+        log.info("Calling  API: {} -start", url);
 
         try {
             ResponseEntity<Response<List<Employee>>> response = restTemplate.exchange(
                     url, HttpMethod.GET, null, new ParameterizedTypeReference<Response<List<Employee>>>() {});
-
+            log.debug("Received response: {}", response);
             if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
                 return response.getBody().data();
             } else {
@@ -58,11 +58,11 @@ public class EmployeeService {
 
     public Optional<Employee> getEmployeeById(String id) {
         String url = mockApiBaseUrl + "/employee/{id}";
-
+        log.info("Calling  API: {} -start", url);
         try {
             ResponseEntity<Response<Employee>> response = restTemplate.exchange(
                     url, HttpMethod.GET, null, new ParameterizedTypeReference<Response<Employee>>() {}, id);
-
+            log.debug("Received response: {}", response);
             if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
                 return Optional.ofNullable(response.getBody().data());
             }
@@ -89,8 +89,8 @@ public class EmployeeService {
     }
 
     public boolean deleteEmployeeByName(String name) {
-        String deleteUrl = mockApiBaseUrl + "/employee"; // Replace with actual delete endpoint
-
+        String url = mockApiBaseUrl + "/employee";
+        log.info("Calling  API: {} -start", url);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -101,8 +101,8 @@ public class EmployeeService {
 
         try {
             ResponseEntity<String> response =
-                    restTemplate.exchange(deleteUrl, HttpMethod.DELETE, requestEntity, String.class);
-
+                    restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, String.class);
+            log.debug("Received response: {}", response);
             return response.getStatusCode().is2xxSuccessful();
 
         } catch (HttpClientErrorException.NotFound ex) {
@@ -126,7 +126,7 @@ public class EmployeeService {
 
     public Optional<Employee> createEmployee(CreateEmployeeInput request) {
         String url = mockApiBaseUrl + "/employee";
-
+        log.info("Calling  API: {} -start", url);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -134,7 +134,7 @@ public class EmployeeService {
         try {
             ResponseEntity<Response<Employee>> response = restTemplate.exchange(
                     url, HttpMethod.POST, httpEntity, new ParameterizedTypeReference<Response<Employee>>() {});
-
+            log.debug("Received response: {}", response);
             return Optional.ofNullable(response.getBody()).map(Response::data);
         } catch (HttpClientErrorException.NotFound ex) {
             // Employee not found

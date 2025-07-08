@@ -8,4 +8,4 @@ logging:
     name: logs/app.log
   level:
     root: INFO
-    com.reliaquest.employee: DEBUG
+    com.reliaquest.api.service: DEBUG
