@@ -8,6 +8,15 @@ dependencies {
     
 }
 
+test {
+    testLogging {
+        events "passed", "failed", "skipped"
+        exceptionFormat "full"
+        showStandardStreams = true
+    }
+}
+
+
 springBoot {
     mainClass = 'com.reliaquest.api.ApiApplication'
 }

@@ -2,9 +2,12 @@ package com.reliaquest.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
-import lombok.Data;
+import lombok.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Employee {
 
     private UUID id;
